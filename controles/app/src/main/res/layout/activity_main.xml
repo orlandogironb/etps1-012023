@@ -36,7 +36,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="271dp"
                 android:ems="10"
+                android:enabled="false"
                 android:gravity="start|top"
+                android:hint="Digite la tabla a mostrar"
                 android:inputType="textMultiLine" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
