@@ -34,7 +34,7 @@ RadioButton rbFem,rbMas,rbOtr;
         spPais.setAdapter(adaptador);
         */
 
-
+        ArrayAdapter<String>
 
     }
 
