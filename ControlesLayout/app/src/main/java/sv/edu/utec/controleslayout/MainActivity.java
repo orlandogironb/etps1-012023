@@ -34,7 +34,32 @@ RadioButton rbFem,rbMas,rbOtr;
         spPais.setAdapter(adaptador);
         */
 
-        ArrayAdapter<String>
+        ArrayAdapter<String> adaptador =new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item){
+
+            public View getView(int posicion,View contenido, ViewGroup parent){
+                View vista=super.getView(posicion,contenido,parent);
+                if(posicion==getCount()){
+                    ((TextView)vista.findViewById(android.R.id.text1)).setText("");
+                    ((TextView)vista.findViewById(android.R.id.text1)).setHint(getItem(getCount()));
+                }
+                return vista;
+            }
+
+            public int getCount(){
+                return super.getCount()-1;
+            }
+        };
+
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adaptador.add("Guatemala");
+        adaptador.add("El Salvador");
+        adaptador.add("Honduras");
+        adaptador.add("Nicaragua");
+        adaptador.add("Panama");
+        adaptador.add("Costa Rica");
+        adaptador.add("Seleccione un Pais");//este es el elemento a quitar del spinner
+        spPais.setAdapter(adaptador);
+        spPais.setSelection(adaptador.getCount());
 
     }
 
