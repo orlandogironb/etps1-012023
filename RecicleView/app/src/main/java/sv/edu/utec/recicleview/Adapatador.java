@@ -33,10 +33,23 @@ public class Adapatador extends RecyclerView.Adapter<Elementos> {
     @Override
     public void onBindViewHolder(@NonNull Elementos holder, int position) {
         Elementos.tvnomPel.setText(modelos.get(position).getNoombPeli());
+        Elementos.tvGenPeli.setText(modelos.get(position).getGeneroPeli());
+        Elementos.imvimgPel.setImageResource(modelos.get(position).getImgPeli());
+
+      /*  Elementos.tvnomPel.setText(modelos.get(position).getNoombPeli());
+        Elementos.tvnomPel.setText(modelos.get(position).getNoombPeli());
+        Elementos.tvnomPel.setText(modelos.get(position).getNoombPeli());
+        Elementos.tvnomPel.setText(modelos.get(position).getNoombPeli());
+        Elementos.tvnomPel.setText(modelos.get(position).getNoombPeli());
+
+       */
+
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+
+       return modelos.size();
     }
 }

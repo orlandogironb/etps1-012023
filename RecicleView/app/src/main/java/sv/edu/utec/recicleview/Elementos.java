@@ -8,7 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Elementos extends RecyclerView.ViewHolder{
-    ImageView imvimgPel;
+    static ImageView imvimgPel;
+
     static TextView tvnomPel,tvGenPeli;
     public Elementos(@NonNull View itemView) {
         super(itemView);
