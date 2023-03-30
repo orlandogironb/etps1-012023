@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'sv.edu.utec.menuopciones'
+    namespace 'sv.edu.utec.buttomnav'
     compileSdk 33
 
     defaultConfig {
-        applicationId "sv.edu.utec.menuopciones"
+        applicationId "sv.edu.utec.buttomnav"
         minSdk 24
         targetSdk 33
         versionCode 1
