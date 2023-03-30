@@ -2,6 +2,7 @@ package sv.edu.utec.menuopciones;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,9 +26,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem items){
+
+        Intent intent = new Intent(this, Sumar.class);
+
         switch (items.getItemId()){
+
             case R.id.opcion1:
                 Toast.makeText(this,"Selecciono la opcion 1"+1,Toast.LENGTH_SHORT).show();
+                startActivity(intent);
                 return true;
             case R.id.opcion2:
                 Toast.makeText(this,"Selecciono la opcion 2"+1,Toast.LENGTH_SHORT).show();
