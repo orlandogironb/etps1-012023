@@ -40,7 +40,7 @@
         app:menu="@menu/menu_bar"
         app:headerLayout="@layout/header"
         android:layout_height="match_parent"
-        android:id="@+id/drawerLat"
+        android:id="@+id/navigator"
         />
 
 
