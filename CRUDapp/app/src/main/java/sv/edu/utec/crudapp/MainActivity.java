@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -16,6 +17,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
+
+import sv.edu.utec.crudapp.datos.BaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +40,17 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white,null));
        // navView=findViewById(R.id.)
+      /*adicion de creacion base de datos 03052023 antes de grabacion */
+        BaseHelper basehelper = new BaseHelper(this);
+        SQLiteDatabase db =basehelper.getWritableDatabase();
+        if(db!=null){
+            Toast.makeText(this, "Base de datos creada", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this, "Error en crear la Base de datos", Toast.LENGTH_LONG).show();
+        }
 
+        /*adicion de creacion base de datos 03052023 fin agregado*/
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
