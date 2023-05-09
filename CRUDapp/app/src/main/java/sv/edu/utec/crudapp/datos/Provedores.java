@@ -2,11 +2,15 @@ package sv.edu.utec.crudapp.datos;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 import sv.edu.utec.crudapp.MensajesFragment;
+import sv.edu.utec.crudapp.entidades.EntProvedores;
 
 public class Provedores extends BaseHelper {
     Context contex;
@@ -45,4 +49,29 @@ public class Provedores extends BaseHelper {
       }
 
     }
+
+    public ArrayList<EntProvedores> mostrarProvedor(){
+        BaseHelper baseHelp = new BaseHelper(contex);
+        SQLiteDatabase bd = baseHelp.getWritableDatabase();
+        ArrayList<EntProvedores>listaProvedores=new ArrayList<>();
+        EntProvedores entProvedores=null;
+        Cursor cursorPrverdor;
+
+        cursorPrverdor=bd.rawQuery("SELECT CODPROV,NOMPROV,TELPROV,CORPROV from "+NOMBRE_TABLAPR,null);
+        if(cursorPrverdor.moveToFirst())
+        {
+            do{
+                entProvedores= new EntProvedores();
+                entProvedores.getCODPROV(cursorPrverdor.getInt(0));
+                entProvedores.getNOMPROV(cursorPrverdor.getString(1));
+                entProvedores.getTELPROV(cursorPrverdor.getString(2));
+                entProvedores.getCORPROV(cursorPrverdor.getString(3));
+                listaProvedores.add(entProvedores);
+            }
+            while(cursorPrverdor.moveToNext());
+        }
+        cursorPrverdor.close();
+        return listaProvedores;
+    }
+
 }
