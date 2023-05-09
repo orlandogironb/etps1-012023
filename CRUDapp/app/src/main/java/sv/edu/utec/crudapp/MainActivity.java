@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white,null));
        // navView=findViewById(R.id.)
       /*adicion de creacion base de datos 03052023 antes de grabacion */
-        BaseHelper basehelper = new BaseHelper(this);
+        BaseHelper basehelper = new BaseHelper(MainActivity.this);
         SQLiteDatabase db =basehelper.getWritableDatabase();
         if(db!=null){
             Toast.makeText(this, "Base de datos creada", Toast.LENGTH_LONG).show();

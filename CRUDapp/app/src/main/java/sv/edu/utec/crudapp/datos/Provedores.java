@@ -9,11 +9,14 @@ import androidx.annotation.Nullable;
 import sv.edu.utec.crudapp.MensajesFragment;
 
 public class Provedores extends BaseHelper {
-    MensajesFragment context;
-    public Provedores(@Nullable MensajesFragment context) {
+    Context contex;
+    public Provedores(Context context) {
         super(context);
-        this.context=context;
     }
+    //Context context;
+
+
+
     /*
      "CODPROV INTEGER PRIMARY KEY AUTOINCREMENT ,"+
              "NOMPROV TEXT NOT NULL ,"+
@@ -25,7 +28,7 @@ public class Provedores extends BaseHelper {
         long codigo=0;
         try {
 
-          BaseHelper baseHelp = new BaseHelper(context);
+          BaseHelper baseHelp = new BaseHelper(contex);
           SQLiteDatabase bd = baseHelp.getWritableDatabase();
 
           ContentValues valoresProv = new ContentValues();
