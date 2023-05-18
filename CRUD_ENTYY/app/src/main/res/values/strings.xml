@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CRUD_ENTYY</string>
+    <string name="menu_nuevo">Nuevo Proveedor</string>
+</resources>

@@ -62,10 +62,10 @@ public class Provedores extends BaseHelper {
         {
             do{
                 entProvedores= new EntProvedores();
-                entProvedores.getCODPROV(cursorPrverdor.getInt(0));
-                entProvedores.getNOMPROV(cursorPrverdor.getString(1));
-                entProvedores.getTELPROV(cursorPrverdor.getString(2));
-                entProvedores.getCORPROV(cursorPrverdor.getString(3));
+                entProvedores.setCODPROV(cursorPrverdor.getInt(0));
+                entProvedores.setNOMPROV(cursorPrverdor.getString(1));
+                entProvedores.setTELPROV(cursorPrverdor.getString(2));
+                entProvedores.setCORPROV(cursorPrverdor.getString(3));
                 listaProvedores.add(entProvedores);
             }
             while(cursorPrverdor.moveToNext());
